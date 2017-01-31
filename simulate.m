@@ -373,6 +373,7 @@ function texx = simulate(anglebetweenmirrors, isIdealCamera, distancecamera, fov
         fitr = createFit([0, yLim],[0, delta]);
 %         yLL5 = yLL-yLim+yLim5;
 %         yRR5 = yRR-yLim+yLim5;
+fitr(yLim5)
         yLL5 = tan(fitr(yLim5))*(xLL-0.5*pivot2pivot) + yLim5;
         yRR5 = tan(-fitr(yLim5))*(xRR-0.5*pivot2pivot) + yLim5;
         plot(figure3, xRR,yRR5)
@@ -381,6 +382,7 @@ function texx = simulate(anglebetweenmirrors, isIdealCamera, distancecamera, fov
 %         yCircle = mirrorsCenter(2)+min(Radius)*sin(-pi:0.01:pi);
 % 
 %         plot(figure3,xCircle,yCircle)
+        diamond_p = (yLim5/yLim)*(diamondAngle-180)+180
         end
     end
 %   180/4 = 45
